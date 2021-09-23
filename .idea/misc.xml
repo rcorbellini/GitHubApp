@@ -3,15 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2078125" />
         <entry key="../../Android/Sdk/platforms/android-30/data/res/drawable/btn_star.xml" value="0.19" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/drawable/bg_circle.xml" value="0.19" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/drawable/outline_mediation_24.xml" value="0.19" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/drawable/outline_star_24.xml" value="0.19" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/drawable/outline_timeline_24.xml" value="0.19" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="features/feature-top-repositories/presentation/src/main/res/layout/fragment_pull_request_list.xml" value="0.1" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/layout/fragment_repo_detail.xml" value="0.1" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/layout/fragment_repository_detail.xml" value="0.13240740740740742" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/layout/fragment_repository_list.xml" value="0.1" />
+        <entry key="features/feature-top-repositories/presentation/src/main/res/layout/item_pull_request.xml" value="0.1" />
         <entry key="features/feature-top-repositories/presentation/src/main/res/layout/item_repository.xml" value="0.33" />
       </map>
     </option>

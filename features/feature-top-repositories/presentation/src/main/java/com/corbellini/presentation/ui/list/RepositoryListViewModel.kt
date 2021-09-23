@@ -3,8 +3,8 @@ package com.corbellini.presentation.ui.list
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.corbellini.domain.models.Repository
-import com.corbellini.domain.usecases.LoadAllPagedUseCase
-import com.corbellini.domain.usecases.LoadAllParams
+import com.corbellini.domain.usecases.LoadAllPagedRepositoryUseCase
+import com.corbellini.domain.usecases.LoadAllRepositoryParams
 import com.corbellini.presentation.models.RepositoryPresentation
 import com.corbellini.presentation.models.toPresentation
 import kotlinx.coroutines.Job
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class RepositoryListViewModel(
-    private val loadAllPagedUseCase: LoadAllPagedUseCase,
+    private val loadAllPagedRepositoryUseCase: LoadAllPagedRepositoryUseCase,
 ) : ViewModel() {
 
     private val _listState =
@@ -41,7 +41,7 @@ class RepositoryListViewModel(
         jobList?.cancel()
         jobList = viewModelScope.launch {
             val nextPage = _listState.value.currentPage + 1;
-            loadAllPagedUseCase.execute(LoadAllParams(page = nextPage))
+            loadAllPagedRepositoryUseCase.execute(LoadAllRepositoryParams(page = nextPage))
                 .onStart {
                     onLoading(true)
                 }

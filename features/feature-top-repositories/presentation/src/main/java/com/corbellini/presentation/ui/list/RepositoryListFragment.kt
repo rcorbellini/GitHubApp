@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.corbellini.android.ext.bindScrollListener
@@ -27,7 +28,11 @@ class RepositoryListFragment : Fragment() {
     private lateinit var binding: FragmentRepositoryListBinding
 
     private val repoAdapter = createRepoAdapter {
-        //todo navegar
+        val action = RepositoryListFragmentDirections.actionFromRepositoryToPr(
+            ownerName = it.owner.login,
+            repoName = it.name
+        )
+        findNavController().navigate(action)
     }
 
     private val onScrollHitBottomLoadMore = object : RecyclerView.OnScrollListener() {
@@ -49,7 +54,8 @@ class RepositoryListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_repository_list, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_repository_list, container, false)
         binding.listRepoRecyclerView.layoutManager = StaggeredGridLayoutManager(
             1,
             StaggeredGridLayoutManager.VERTICAL
@@ -57,13 +63,18 @@ class RepositoryListFragment : Fragment() {
 
         observeRepoListState()
 
-        dispatchLoadMore()
+
+        if(isEmptyList()) {
+            dispatchLoadMore()
+        }
 
         return binding.root
     }
     // endregion
 
     // region Private API
+    private fun isEmptyList() = repoAdapter.currentList.isEmpty()
+
     private fun dispatchLoadMore() {
         repoListViewModel.dispatchEvent(RepositoryListEvent.LoadMore)
     }
@@ -83,8 +94,11 @@ class RepositoryListFragment : Fragment() {
 
     private fun handleError(state: RepositoryListState) {
         state.error?.run {
-            //todo make it better
-            Snackbar.make(binding.listRepoRecyclerView, this, Snackbar.LENGTH_LONG).show()
+            try {
+                Snackbar.make(binding.listRepoRecyclerView, this, Snackbar.LENGTH_LONG).show()
+            } catch (e: IllegalArgumentException) {
+                e.printStackTrace()
+            }
         }
     }
 
@@ -104,13 +118,12 @@ class RepositoryListFragment : Fragment() {
         }
     }
 
-    private fun handleList(favorites: List<RepositoryPresentation>) {
+    private fun handleList(repositories: List<RepositoryPresentation>) {
         //binding.noDataFoundTextView.hide()
         binding.listRepoRecyclerView.show()
         binding.listRepoRecyclerView.apply {
-            //to avoid 'blink' and scroll to the top
             adapter ?: run { adapter = repoAdapter }
-            repoAdapter.submitList(favorites)
+            repoAdapter.submitList(repositories)
         }
     }
 
