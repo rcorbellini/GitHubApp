@@ -9,7 +9,8 @@ object Config {
 }
 
 object Versions {
-
+    val kt_coroutines = "1.4.3"
+    val koin = "2.2.2"
 
     // <editor-fold desc="tools">
     val kotlin = "1.4.31"
@@ -20,11 +21,20 @@ object Versions {
 
 object Deps {
 
+    val lib_kt_coroutines =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kt_coroutines}"
+
+    //<editor-fold desc="Android">
+    val koin = "io.insert-koin:koin-core:${Versions.koin}"
+    val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
+    //  </editor-fold>
+
     // <editor-fold desc="tools">
 
-    val tools_gradleandroid           = "com.android.tools.build:gradle:${Versions.gradleandroid}"
-    val tools_kotlin                  = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-    val tools_gradleversions          = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleversions}"
+    val tools_gradleandroid = "com.android.tools.build:gradle:${Versions.gradleandroid}"
+    val tools_kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    val tools_gradleversions =
+        "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleversions}"
 
     // </editor-fold>
 }

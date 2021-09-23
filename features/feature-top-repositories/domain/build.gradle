@@ -1,8 +1,11 @@
 plugins {
     id 'java-library'
-    id 'org.jetbrains.kotlin.jvm'
+    id 'kotlin'
 }
 
 dependencies {
     implementation project(':libraries:lib-commons-core')
+
+    implementation Deps.koin
+    implementation Deps.lib_kt_coroutines
 }
