@@ -1,4 +1,4 @@
-package com.corbellini.mylibrary
+package com.corbellini.data
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

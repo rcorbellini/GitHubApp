@@ -4,5 +4,5 @@ import com.corbellini.domain.models.Repository
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoryRepository {
-    suspend fun loadAllPaged(page: Int, language: String): Flow<Result<Repository>>
+    suspend fun loadAllPaged(page: Int, language: String): Flow<Result<List<Repository>>>
 }

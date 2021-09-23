@@ -11,6 +11,8 @@ object Config {
 object Versions {
     val kt_coroutines = "1.4.3"
     val koin = "2.2.2"
+    val log_interceptor = "4.2.1"
+    val retrofit = "2.9.0"
 
     // <editor-fold desc="tools">
     val kotlin = "1.4.31"
@@ -30,11 +32,15 @@ object Deps {
     //  </editor-fold>
 
     // <editor-fold desc="tools">
-
     val tools_gradleandroid = "com.android.tools.build:gradle:${Versions.gradleandroid}"
     val tools_kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     val tools_gradleversions =
         "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleversions}"
+    // </editor-fold>
 
+    // <editor-fold desc="retrofit">
+    val logginInterceptor                = "com.squareup.okhttp3:logging-interceptor:${Versions.log_interceptor}"
+    val retrofit                         = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    val retrofit_gson                    = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     // </editor-fold>
 }
