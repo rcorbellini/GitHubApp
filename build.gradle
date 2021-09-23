@@ -1,5 +1,63 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath Deps.tools_gradleandroid
+        classpath Deps.tools_kotlin
+        classpath Deps.tools_gradleversions
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.30'
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+subprojects {
+    afterEvaluate { project ->
+
+        println(project)
+        if (project.hasProperty('android')) {
+            println(project)
+            android {
+                buildToolsVersion Config.buildTools
+                compileSdkVersion Config.compileSdk
+
+                defaultConfig {
+                    minSdkVersion Config.minSdk
+                    targetSdkVersion Config.targetSdk
+                    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                }
+
+                compileOptions {
+                    sourceCompatibility Config.javaVersion
+                    targetCompatibility Config.javaVersion
+                }
+
+                kotlinOptions {
+                    jvmTarget = Config.javaVersion.toString()
+                }
+
+                lintOptions {
+                    abortOnError false
+                }
+
+                buildFeatures {
+                    dataBinding true
+                }
+            }
+        }
+        //Any project can return a "result" kotlin class
+        tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+            kotlinOptions {
+                freeCompilerArgs = freeCompilerArgs + "-Xallow-result-return-type"
+            }
+        }
+    }
 }

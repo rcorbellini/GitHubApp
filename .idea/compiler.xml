@@ -5,6 +5,7 @@
       <module name="GitHub_App.app" target="11" />
       <module name="GitHub_App.buildSrc" target="11" />
       <module name="GitHub_App.features.feature-top-repositories.data" target="11" />
+      <module name="GitHub_App.features.feature-top-repositories.domain" target="11" />
       <module name="GitHub_App.features.feature-top-repositories.presentation" target="11" />
     </bytecodeTargetLevel>
   </component>
