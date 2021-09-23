@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    plugins {
+        id 'com.android.application' version '7.1.0-alpha12'
+        id 'com.android.library' version '7.1.0-alpha12'
+        id 'org.jetbrains.kotlin.android' version '1.5.31'
+        id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "GitHub App"
+include ':app'
+include ':features:feature-top-repositories:domain'
+include ':features:feature-top-repositories:presentation'
+include ':features:feature-top-repositories:data'
+include ':libraries:lib-commons-android'
+include ':libraries:lib-commons-core'

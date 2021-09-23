@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.GitHubApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.GitHubApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.GitHubApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
