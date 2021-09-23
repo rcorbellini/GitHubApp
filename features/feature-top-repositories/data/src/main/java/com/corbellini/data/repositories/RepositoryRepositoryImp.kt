@@ -22,8 +22,10 @@ class RepositoryRepositoryImp(
 
                 emit(Result.success(response.items.map { it.toModel() }))
             } catch (e: Exception) {
-                emit(Result.failure(RemoteApiExceptions()))
+                e.printStackTrace();
+                emit(Result.failure(RemoteApiExceptions(e.message?: "empty")))
             }
         }
-
+//https://api.github.com/search/repositories?q=language%3AJava&page=1&sort=stars
+//https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1
 }
