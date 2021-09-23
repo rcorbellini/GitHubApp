@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="GitHub_App.app" target="11" />
+      <module name="GitHub_App.buildSrc" target="11" />
+      <module name="GitHub_App.features.feature-top-repositories.data" target="11" />
+      <module name="GitHub_App.features.feature-top-repositories.presentation" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
