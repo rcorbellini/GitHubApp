@@ -1,4 +1,4 @@
-package com.corbellini.mylibrary
+package com.corbellini.data
 
 import org.junit.Test
 
