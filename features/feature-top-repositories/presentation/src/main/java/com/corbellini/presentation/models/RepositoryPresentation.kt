@@ -8,7 +8,13 @@ data class RepositoryPresentation(
     val starCount: Int,
     val forkCount: Int,
     val owner: OwnerPresentation
-)
+){
+    fun resolvedForkCount() = "${forkCount / 1000}k"
+
+    fun resolvedStarCount() = "${starCount / 1000}k"
+
+    fun resolvedName() = "${owner.login}/${name}"
+}
 
 
 fun Repository.toPresentation() = RepositoryPresentation(

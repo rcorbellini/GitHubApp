@@ -43,6 +43,7 @@ internal fun createRepoAdapter(onClick: (RepositoryPresentation) -> Unit) =
                 Glide.with(vh.itemView.context)
                     .load(imgUri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .circleCrop()
                     .into(vh.binding.imageView)
             }
         )

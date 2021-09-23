@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="repo"
             type="com.corbellini.presentation.models.RepositoryPresentation" />
@@ -13,10 +14,9 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/repo_card"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginHorizontal="4dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="260dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="8dp"
@@ -29,38 +29,90 @@
 
             <ImageView
                 android:id="@+id/image_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_margin="16dp"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-            <FrameLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/name_text_view"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_margin="16dp"
+                android:text="@{repo.resolvedName()}"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/image_view"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="nome" />
+
+
+            <ImageView
+                android:id="@+id/image_star"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/outline_star_24"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/image_view"
+                app:layout_constraintTop_toBottomOf="@id/name_text_view" />
+
+            <TextView
+                android:id="@+id/count_stars_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{repo.resolvedStarCount()}"
+                app:layout_constraintStart_toEndOf="@id/image_star"
+                app:layout_constraintTop_toBottomOf="@id/name_text_view"
+                app:layout_constraintBottom_toBottomOf="@id/image_star"
+
+                tools:text="300k" />
+
+            <ImageView
+                android:id="@+id/image_forked"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/outline_timeline_24"
+                app:layout_constraintStart_toEndOf="@id/count_stars_text_view"
+                app:layout_constraintTop_toBottomOf="@id/name_text_view" />
+
+            <TextView
+                android:id="@+id/count_forks_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{repo.resolvedForkCount()}"
+                app:layout_constraintStart_toEndOf="@id/image_forked"
+                app:layout_constraintTop_toBottomOf="@id/name_text_view"
+                app:layout_constraintBottom_toBottomOf="@id/image_forked"
+                tools:text="300k" />
+
+            <View
+                android:id="@+id/divisor"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/holo_orange_dark"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/image_view" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp">
-
-                    <TextView
-                        android:id="@+id/name_text_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="@{repo.name}"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        tools:text="--" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </FrameLayout>
+            <TextView
+                android:id="@+id/description_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:text="@{repo.description}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divisor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:ellipsize="end"
+                tools:text="nome" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
