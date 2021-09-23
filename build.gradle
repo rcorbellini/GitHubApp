@@ -10,6 +10,7 @@ buildscript {
         classpath Deps.tools_gradleandroid
         classpath Deps.tools_kotlin
         classpath Deps.tools_gradleversions
+        classpath Deps.androidx_navigation_safe_args
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.30'
     }
 }

@@ -8,7 +8,36 @@
         android:id="@+id/repoListFragment"
         android:name="com.corbellini.presentation.ui.list.RepositoryListFragment"
         android:label="RepoListFragment">
-    </fragment>
 
+        <action
+            android:id="@+id/action_fromRepositoryToPr"
+            app:destination="@id/prListFragment"
+            app:enterAnim="@anim/fragment_fade_enter">
+            <argument
+                android:name="ownerName"
+                android:defaultValue="--"
+                app:argType="string" />
+            <argument
+                android:name="repoName"
+                android:defaultValue="--"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/prListFragment"
+        android:name="com.corbellini.presentation.ui.detail.PullRequestListFragment"
+        android:label="PrListFragment">
+
+
+        <argument
+            android:name="ownerName"
+            android:defaultValue="--"
+            app:argType="string" />
+
+        <argument
+            android:name="repoName"
+            android:defaultValue="--"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

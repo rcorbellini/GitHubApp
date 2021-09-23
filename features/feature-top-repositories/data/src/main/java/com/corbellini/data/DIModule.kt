@@ -1,10 +1,11 @@
 package com.corbellini.data
 
+import com.corbellini.data.remote.services.PullRequestService
 import com.corbellini.data.remote.services.RepositoryService
+import com.corbellini.data.repositories.PullRequestRepositoryImp
 import com.corbellini.data.repositories.RepositoryRepositoryImp
+import com.corbellini.domain.repositories.PullRequestRepository
 import com.corbellini.domain.repositories.RepositoryRepository
-import com.corbellini.domain.usecases.LoadAllPagedUseCase
-import com.corbellini.domain.usecases.LoadAllPagedUseCaseImp
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -15,7 +16,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 val topRepositoryData = module {
-    factory <RepositoryRepository> {
+    factory<PullRequestRepository> {
+        PullRequestRepositoryImp(service = get())
+    }
+
+    single { providePullRequestService(retrofit = get()) }
+
+    factory<RepositoryRepository> {
         RepositoryRepositoryImp(service = get())
     }
     single { provideRepoService(retrofit = get()) }
@@ -33,6 +40,10 @@ val topRepositoryData = module {
 
 internal fun provideRepoService(retrofit: Retrofit): RepositoryService =
     retrofit.create(RepositoryService::class.java)
+
+
+internal fun providePullRequestService(retrofit: Retrofit): PullRequestService =
+    retrofit.create(PullRequestService::class.java)
 
 
 internal fun provideRetrofit(okHttpClient: OkHttpClient, url: String): Retrofit {

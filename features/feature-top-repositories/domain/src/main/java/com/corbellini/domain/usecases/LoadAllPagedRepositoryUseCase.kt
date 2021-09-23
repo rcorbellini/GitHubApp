@@ -6,16 +6,16 @@ import com.corbellini.domain.models.Repository
 import com.corbellini.domain.repositories.RepositoryRepository
 import kotlinx.coroutines.flow.Flow
 
-interface LoadAllPagedUseCase : UseCase<List<Repository>, LoadAllParams> {
-    override suspend fun execute(params: LoadAllParams): Flow<Result<List<Repository>>>
+interface LoadAllPagedRepositoryUseCase : UseCase<List<Repository>, LoadAllRepositoryParams> {
+    override suspend fun execute(params: LoadAllRepositoryParams): Flow<Result<List<Repository>>>
 }
 
-class LoadAllPagedUseCaseImp(private val repository: RepositoryRepository) : LoadAllPagedUseCase {
-    override suspend fun execute(params: LoadAllParams) =
+class LoadAllPagedRepositoryUseCaseImp(private val repository: RepositoryRepository) : LoadAllPagedRepositoryUseCase {
+    override suspend fun execute(params: LoadAllRepositoryParams) =
         repository.loadAllPaged(page = params.page, language = params.language)
 }
 
-data class LoadAllParams(
+data class LoadAllRepositoryParams(
     val page: Int = 1,
     val language: String = "Java"
 ) : UseCaseParam()
