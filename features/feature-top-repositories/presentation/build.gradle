@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     buildFeatures {
@@ -10,14 +11,27 @@ android {
 dependencies {
     implementation project(':features:feature-top-repositories:domain')
     implementation project(':libraries:lib-commons-core')
+    implementation project(':libraries:lib-commons-android')
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation Deps.koinAndroid
+    implementation Deps.koinAndroidViewModel
+    implementation Deps.android_material
+    implementation Deps.lib_kt_coroutines
+
+    implementation Deps.androidx_recyclerview
+    implementation Deps.androidx_navigation_fragment
+    implementation Deps.androidx_navigation_ui
+
+
+    implementation Deps.kiel
+
+    implementation Deps.glide
+    annotationProcessor Deps.glide
+
+
+    testImplementation Deps.testlib_mockito
+    testImplementation Deps.testlib_coroutines
+    testImplementation Deps.testlib_junit
+    testImplementation Deps.testlib_kt_junit
+    testImplementation Deps.testlib_archComponent
 }
