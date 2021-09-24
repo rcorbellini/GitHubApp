@@ -8,4 +8,9 @@ dependencies {
 
     implementation Deps.koin
     implementation Deps.lib_kt_coroutines
+
+    testImplementation Deps.testlib_mockito
+    testImplementation Deps.testlib_coroutines
+    testImplementation Deps.testlib_junit
+    testImplementation Deps.testlib_kt_junit
 }

@@ -11,4 +11,6 @@
     <string name="avatar">Avatar</string>
     <string name="stars">Stars</string>
     <string name="forks">Forks</string>
+    <string name="title_repo">Lista de Repositórios</string>
+    <string name="tilte_pr">Lista de Pull-Request</string>
 </resources>
