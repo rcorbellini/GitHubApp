@@ -22,9 +22,9 @@ O projeto foi desenhado para poder escalar seu crescimento para suportar muitos 
 A arquitetura tem alguns módulos chaves e regras que devem ser seguidas para que o seu objetivo seja alcançado com sucesso.
 O Módulo **APP** responsável por fazer o start da aplicação deve ter acesso a todas as features, pois ele é responsável por fazer a ponte entre features quando necessário.
 
-Os Módulos de Features, é toda camada central da aplicação, foi desenhado para que cada feature pudesse seguir o padrão que a squad quiser desenvolver, neste exemplo do projeto foi cruado uma feature usando MVVM, mas nada impede em ter uma outra feature com MVC, as features não devem fazer referencia uma a outra sempre que precisar de inter comunicação devem fazer via o APP, as features podem e devem usar a camada de Libraries pra compartilhar esforço comum emtre times.
+Os Módulos de Features, é toda camada central da aplicação, foi desenhado para que cada feature pudesse seguir o padrão que a squad quiser desenvolver, neste exemplo do projeto foi criado uma feature usando MVVM, mas nada impede em ter uma outra feature com MVC, as features não devem fazer referencia uma a outra sempre que precisar de comunicação interna devem fazer via o APP, as features podem e devem usar a camada de Libraries pra compartilhar esforço comum entre times.
 
-Os Módulos de libraries, são tudo que é Cross squad/time que vai além de uma feature aplicando ao escopo do projeto inteiro, no exemplo foi criado duas lib uma somente com código Kotlin (pra poder ser usada nas camadas Domain, quando se utilizar Clean na feature) e uma lib Android pra conter o código da commum da arquitetura do Android, as libraries **NÃO** ter dependencias com os módulos Features (caso contrário vai acabar fazendo dependencia entre módulos de forma indireta).
+Os Módulos de libraries, são tudo que é Cross squad/time que vai além de uma feature aplicando ao escopo do projeto inteiro, no exemplo foi criado duas lib uma somente com código Kotlin (pra poder ser usada nas camadas Domain, quando se utilizar Clean na feature) e uma lib Android pra conter o código da commum da arquitetura do Android, as libraries **NÃO** podem ter dependencias com os módulos Features (caso contrário vai acabar fazendo dependencia entre módulos de forma indireta).
 
 Segue a imagem exemplificando
 
