@@ -26,7 +26,7 @@ Os Módulos de Features, é toda camada central da aplicação, foi desenhado pa
 
 Os Módulos de libraries, são tudo que é Cross squad/time que vai além de uma feature aplicando ao escopo do projeto inteiro, no exemplo foi criado duas lib uma somente com código Kotlin (pra poder ser usada nas camadas Domain, quando se utilizar Clean na feature) e uma lib Android pra conter o código da commum da arquitetura do Android, as libraries **NÃO** ter dependencias com os módulos Features (caso contrário vai acabar fazendo dependencia entre módulos de forma indireta).
 
-Segue a imagem exemplifican
+Segue a imagem exemplificando
 
  ![Arquitetura](https://user-images.githubusercontent.com/151217/134596845-51b14768-f9ea-4476-b685-3f18dd492a2f.jpg)
 
@@ -46,7 +46,7 @@ Tem como objetivo técnico, ser um dos módulos (features) exemplo do projeto, e
 
 A base para escolha das arquiteturas escolhidas foi o a flexibilidade, ou seja este módulo pode facilmente se adaptar a alterações (mudança de contrato de API, mudança completa de tela, mudança de comportamento de armazenamento de dados), outro ponto importante é que ela é facilmente testada de forma unitaria nas suas principais camadas.
 
-Projeto faz uso do **flow** + **result** e **stateflow** pra fazer as requisições de forma asyncronas, faz uso do **navigation** + **safeArgs** pra fazer a navegação entre as telas, faz uso do **retrofit** pra fazer a requisição a API remota, faz uso do **Koin** como injetor de dependencias, faz uso do **Glide** para o carregamento e cache de imagem remota.
+Projeto faz uso do **flow** + **result** e **stateflow** pra fazer as requisições de forma asyncronas, faz uso do **navigation** + **safeArgs** pra fazer a navegação entre as telas, faz uso do **retrofit** pra fazer a requisição a API remota, faz uso do **Koin** como injetor de dependencias, faz uso do **Glide** para o carregamento e cache de imagem remota, utiliziado dependencias unificadas o **buildSrc** pra fazer o gerenciamento das versões.
 
 
 ## Sobre a utilização do Git + Github
