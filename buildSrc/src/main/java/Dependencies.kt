@@ -20,6 +20,14 @@ object Versions {
     val androidx_navigation = "2.3.4"
     val android_material = "1.3.0"
 
+    val junit = "4.13.2"
+    val junitext = "1.1.2"
+    val mockito = "2.2.11"
+    val androidx_espresso = "3.3.0"
+    val androidx_testing = "1.3.0"
+    val jupter = "5.6.2"
+    val archComponentTestVersion = "2.1.0"
+
 
     val kotlin = "1.4.31"
     val gradleandroid = "7.1.0-alpha12"
@@ -53,6 +61,20 @@ object Deps {
     val tools_gradleversions =
         "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleversions}"
     // </editor-fold>
+
+    // <editor-fold desc="testing">
+    val testlib_junit               = "junit:junit:${Versions.junit}"
+    val testlib_junitext            = "androidx.test.ext:junit:${Versions.junitext}"
+    val testandroidx_rules          = "androidx.test:rules:${Versions.androidx_testing}"
+    val testandroidx_runner         = "androidx.test:runner:${Versions.androidx_testing}"
+    val testandroidx_espressocore   = "androidx.test.espresso:espresso-core:${Versions.androidx_espresso}"
+    val testlib_mockito             = "org.mockito.kotlin:mockito-kotlin:${Versions.mockito}"
+    val testlib_kt_junit            = "org.jetbrains.kotlin:kotlin-test-junit5"
+    val testlib_kt_test             = "org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}"
+    val testlib_coroutines          = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kt_coroutines}"
+    val testlib_jupter              = "org.junit.jupiter:junit-jupiter-api:${Versions.jupter}"
+    val testlib_archComponent       = "androidx.arch.core:core-testing:${Versions.archComponentTestVersion}"
+    //</editor-fold>
 
     // <editor-fold desc="retrofit">
     val logginInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.log_interceptor}"

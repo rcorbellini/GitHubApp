@@ -2,8 +2,11 @@ package com.corbellini.presentation.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NavUtils
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -38,6 +41,8 @@ class PullRequestListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreate(savedInstanceState)
+        setupActionBar()
+
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_pull_request_list, container, false)
         binding.listPrRecyclerView.layoutManager = StaggeredGridLayoutManager(
@@ -55,7 +60,12 @@ class PullRequestListFragment : Fragment() {
     // endregion
 
     // region Private API
-
+    private fun setupActionBar(){
+       (activity as AppCompatActivity).supportActionBar?.apply {
+           title = getString(R.string.tilte_pr)
+           setDisplayHomeAsUpEnabled(true)
+       }
+    }
 
     private fun dispatchLoadAll(ownerName: String, repoName: String) {
         viewModel.dispatchEvent(
