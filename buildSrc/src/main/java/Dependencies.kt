@@ -25,6 +25,7 @@ object Versions {
     val mockito = "2.2.11"
     val androidx_espresso = "3.3.0"
     val androidx_testing = "1.3.0"
+    val androidx_testing_core = "1.0.0"
     val jupter = "5.6.2"
     val archComponentTestVersion = "2.1.0"
 
@@ -67,6 +68,7 @@ object Deps {
     val testlib_junitext            = "androidx.test.ext:junit:${Versions.junitext}"
     val testandroidx_rules          = "androidx.test:rules:${Versions.androidx_testing}"
     val testandroidx_runner         = "androidx.test:runner:${Versions.androidx_testing}"
+    val testandroidx_core           = "androidx.test:core:${Versions.androidx_testing_core}"
     val testandroidx_espressocore   = "androidx.test.espresso:espresso-core:${Versions.androidx_espresso}"
     val testlib_mockito             = "org.mockito.kotlin:mockito-kotlin:${Versions.mockito}"
     val testlib_kt_junit            = "org.jetbrains.kotlin:kotlin-test-junit5"

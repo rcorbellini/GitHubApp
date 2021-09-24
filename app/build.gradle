@@ -4,6 +4,17 @@ plugins {
 }
 
 android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
 
     defaultConfig {
         applicationId "com.corbellini.githubapp"
@@ -30,4 +41,36 @@ dependencies {
 
 
     implementation Deps.koinAndroid
+    implementation Deps.koinAndroidViewModel
+    implementation Deps.android_material
+    implementation Deps.lib_kt_coroutines
+
+    implementation Deps.androidx_recyclerview
+    implementation Deps.androidx_navigation_fragment
+    implementation Deps.androidx_navigation_ui
+
+
+    implementation Deps.kiel
+
+    implementation Deps.glide
+    annotationProcessor Deps.glide
+
+
+    testImplementation Deps.testlib_mockito
+    testImplementation Deps.testlib_coroutines
+    testImplementation Deps.testlib_junit
+    testImplementation Deps.testlib_kt_junit
+    testImplementation Deps.testlib_archComponent
+
+
+    androidTestImplementation Deps.testlib_mockito
+    androidTestImplementation Deps.testlib_coroutines
+    androidTestImplementation Deps.testlib_junit
+    androidTestImplementation Deps.testlib_kt_junit
+    androidTestImplementation Deps.testlib_archComponent
+    androidTestImplementation Deps.testlib_junitext
+    androidTestImplementation Deps.testandroidx_core
+    androidTestImplementation Deps.testandroidx_rules
+    androidTestImplementation Deps.testandroidx_runner
+    androidTestImplementation Deps.testandroidx_espressocore
 }
