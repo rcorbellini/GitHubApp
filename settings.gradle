@@ -5,17 +5,23 @@ pluginManagement {
         mavenCentral()
     }
     plugins {
-        id 'com.android.application' version '7.1.0-alpha12'
-        id 'com.android.library' version '7.1.0-alpha12'
+        id 'com.android.application' version '7.1.0-alpha13'
+        id 'com.android.library' version '7.1.0-alpha13'
         id 'org.jetbrains.kotlin.android' version '1.5.31'
         id 'org.jetbrains.kotlin.jvm' version '1.5.31'
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'features/feature-treasure-hunt/build/host/outputs/repo'
+        }
+        maven {
+            url 'https://storage.googleapis.com/download.flutter.io'
+        }
     }
 }
 rootProject.name = "GitHub App"
@@ -25,3 +31,4 @@ include ':features:feature-top-repositories:presentation'
 include ':features:feature-top-repositories:data'
 include ':libraries:lib-commons-android'
 include ':libraries:lib-commons-core'
+include ':libraries:lib-theme'

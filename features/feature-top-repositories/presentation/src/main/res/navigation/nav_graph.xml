@@ -11,8 +11,7 @@
 
         <action
             android:id="@+id/action_fromRepositoryToPr"
-            app:destination="@id/prListFragment"
-            app:enterAnim="@anim/fragment_fade_enter">
+            app:destination="@id/prListFragment">
             <argument
                 android:name="ownerName"
                 android:defaultValue="--"

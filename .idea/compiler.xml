@@ -7,7 +7,9 @@
       <module name="GitHub_App.features.feature-top-repositories.data" target="11" />
       <module name="GitHub_App.features.feature-top-repositories.domain" target="11" />
       <module name="GitHub_App.features.feature-top-repositories.presentation" target="11" />
+      <module name="GitHub_App.lib-theme" target="11" />
       <module name="GitHub_App.libraries.lib-commons-core" target="11" />
+      <module name="GitHub_App.libraries.lib-theme" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

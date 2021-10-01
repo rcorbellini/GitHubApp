@@ -12,6 +12,7 @@ dependencies {
     implementation project(':features:feature-top-repositories:domain')
     implementation project(':libraries:lib-commons-core')
     implementation project(':libraries:lib-commons-android')
+    implementation project(':libraries:lib-theme')
 
     implementation Deps.koinAndroid
     implementation Deps.koinAndroidViewModel

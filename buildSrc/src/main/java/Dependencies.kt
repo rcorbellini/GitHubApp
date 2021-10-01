@@ -30,7 +30,7 @@ object Versions {
 
 
     val kotlin = "1.4.31"
-    val gradleandroid = "7.1.0-alpha12"
+    val gradleandroid = "7.1.0-alpha13"
     val gradleversions = "0.38.0"
 }
 
