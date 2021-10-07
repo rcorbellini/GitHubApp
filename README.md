@@ -30,7 +30,8 @@ Os Módulos de libraries, são tudo que é Cross squad/time que vai além de uma
 
 Segue a imagem exemplificando
 
- ![Arquitetura](https://user-images.githubusercontent.com/151217/134596845-51b14768-f9ea-4476-b685-3f18dd492a2f.jpg)
+![arquiterura](https://user-images.githubusercontent.com/151217/136462117-0dfa662d-9b50-43ff-b60d-9c49c6c79847.jpg)
+
 
 
 ## Sobre a feature-top-repositories
@@ -57,7 +58,7 @@ Projeto faz uso do **flow** + **result** e **stateflow** pra fazer as requisiç�
 
 Tem como objetivo funciona, ser a home do projeto e validar uma chamada com outra feature já existente (top respository).
 
-Tem como objetivo técnico, ser um projeto em flutter capaz de chamar features existente em android nativo, ter um padrao de arquitetura ainda ser definido (bloc/getx), provocar a criação das primeiras libs do flutter.
+Tem como objetivo técnico, ser um projeto em flutter capaz de chamar features existente em android nativo, ter um padrao de arquitetura ainda ser definido (**bloc**/**getx**), tex exemplo de pelo menos teste unitario em todas as camadas do fluter em dart, provocar a criação das primeiras libs do flutter, provocar possíveis automações que terá que existir para um deploy saldavél da aplicação.
 
 ## Sobre a utilização do Git + Github
 Para seguir as boas praticas atuais de desenvolvimento alguns padrões de desenvolvimento foram seguido, toda tarefa executada precisa de uma issue do Github para que a mesma seja feita, todo código mergeado deve seguir via MR mesmo que esteja sendo feito por um unico desenvolvedor.
