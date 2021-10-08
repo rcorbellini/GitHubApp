@@ -4,14 +4,16 @@ Este projeto é um projeto destinado a sand-box com diversos testes tanto de arq
 
 ## O que ele contempla? 
 - Projeto multimodular escalável.
-- Projeto com feature de exemplo (Top Java Repository).
-- Projeto com Clean Arc + MVVM + Repository Pattern (Top Java Repository).
-- Exemplo de testes unitários em todas as camadas do Clean (Top Java Repository).
-- Exemplo de tratativas de acessibilidade (Top Java Repository).
+- Projeto com feature Nativa Android de exemplo (features/feature-top-repositories).
+- Projeto com Clean Arc + MVVM + Repository Pattern (features/feature-top-repositories).
+- Exemplo de testes unitários em todas as camadas do Clean (features/feature-top-repositories).
+- Exemplo de tratativas de acessibilidade (features/feature-top-repositories).
+- Exemplo de Feature em Flutter dentro de um projeto nativo Android (features/feature-treasure-hunt)
+- Exemplo de biblioteca android Cross Feature, usado para que todos tenham o mesmo thema (GitHubApp/libraries/lib-theme).
+- Exemplo de biblioteca Flutter Cross Feature, usada para navegar para o nativo (GitHubApp/libraries/lib_flutter_core)
 - Boas praticas de uso do Git, (Git Flow, Attomic commits, Semmantic commits).
 
 ## O que esta nos planos para ser feito?
-- Projeto com feature em Flutter.
 - Projeto com feature usando Jetpack-Compose.
 - Projeto com feature em repositório apartado.
 
@@ -28,7 +30,8 @@ Os Módulos de libraries, são tudo que é Cross squad/time que vai além de uma
 
 Segue a imagem exemplificando
 
- ![Arquitetura](https://user-images.githubusercontent.com/151217/134596845-51b14768-f9ea-4476-b685-3f18dd492a2f.jpg)
+![arquiterura](https://user-images.githubusercontent.com/151217/136462117-0dfa662d-9b50-43ff-b60d-9c49c6c79847.jpg)
+
 
 
 ## Sobre a feature-top-repositories
@@ -48,6 +51,14 @@ A base para escolha das arquiteturas escolhidas foi o a flexibilidade, ou seja e
 
 Projeto faz uso do **flow** + **result** e **stateflow** pra fazer as requisições de forma asyncronas, faz uso do **navigation** + **safeArgs** pra fazer a navegação entre as telas, faz uso do **retrofit** pra fazer a requisição a API remota, faz uso do **Koin** como injetor de dependencias, faz uso do **Glide** para o carregamento e cache de imagem remota, utiliziado dependencias unificadas o **buildSrc** pra fazer o gerenciamento das versões.
 
+
+
+
+## Sobre a treasure-hunt
+
+Tem como objetivo funciona, ser a home do projeto e validar uma chamada com outra feature já existente (top respository).
+
+Tem como objetivo técnico, ser um projeto em flutter capaz de chamar features existente em android nativo, ter um padrao de arquitetura ainda ser definido (**bloc**/**getx**), tex exemplo de pelo menos teste unitario em todas as camadas do fluter em dart, provocar a criação das primeiras libs do flutter, provocar possíveis automações que terá que existir para um deploy saldavél da aplicação.
 
 ## Sobre a utilização do Git + Github
 Para seguir as boas praticas atuais de desenvolvimento alguns padrões de desenvolvimento foram seguido, toda tarefa executada precisa de uma issue do Github para que a mesma seja feita, todo código mergeado deve seguir via MR mesmo que esteja sendo feito por um unico desenvolvedor.
