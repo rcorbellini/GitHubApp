@@ -54,7 +54,7 @@ Projeto faz uso do **flow** + **result** e **stateflow** pra fazer as requisiç�
 
 
 
-## Sobre a treasure-hunt
+## Sobre a feature-home
 
 Tem como objetivo funciona, ser a home do projeto e validar uma chamada com outra feature já existente (top respository).
 
