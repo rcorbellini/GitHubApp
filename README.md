@@ -30,7 +30,7 @@ Os Módulos de libraries, são tudo que é Cross squad/time que vai além de uma
 
 Segue a imagem exemplificando
 
-![arquiterura](https://user-images.githubusercontent.com/151217/136462117-0dfa662d-9b50-43ff-b60d-9c49c6c79847.jpg)
+![arquiterura](https://user-images.githubusercontent.com/151217/136592682-61bf195a-2e6f-47a9-bf6a-5ab4cd889b6e.jpg)
 
 
 
