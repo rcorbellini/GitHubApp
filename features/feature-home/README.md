@@ -1,4 +1,4 @@
-# treasure_hunt
+# feature_home
 
 A new flutter module project.
 

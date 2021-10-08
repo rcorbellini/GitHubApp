@@ -34,10 +34,9 @@ dependencies {
     implementation project(':libraries:lib-theme')
 
 
-    debugImplementation 'com.corbellini.treasure.treasure_hunt:flutter_debug:1.0'
-    profileImplementation 'com.corbellini.treasure.treasure_hunt:flutter_profile:1.0'
-    releaseImplementation 'com.corbellini.treasure.treasure_hunt:flutter_release:1.0'
-
+    debugImplementation 'com.corbellini.home.feature_home:flutter_debug:1.0'
+    profileImplementation 'com.corbellini.home.feature_home:flutter_profile:1.0'
+    releaseImplementation 'com.corbellini.home.feature_home:flutter_release:1.0'
 
     implementation Deps.koinAndroid
 }

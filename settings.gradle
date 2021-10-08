@@ -17,7 +17,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            url 'features/feature-treasure-hunt/build/host/outputs/repo'
+            url 'features/feature-home/build/host/outputs/repo'
         }
         maven {
             url 'https://storage.googleapis.com/download.flutter.io'
