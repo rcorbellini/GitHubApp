@@ -8,7 +8,7 @@ Este projeto é um projeto destinado a sand-box com diversos testes tanto de arq
 - Projeto com Clean Arc + MVVM + Repository Pattern (features/feature-top-repositories).
 - Exemplo de testes unitários em todas as camadas do Clean (features/feature-top-repositories).
 - Exemplo de tratativas de acessibilidade (features/feature-top-repositories).
-- Exemplo de Feature em Flutter dentro de um projeto nativo Android (features/feature-treasure-hunt)
+- Exemplo de Feature em Flutter dentro de um projeto nativo Android (features/feature-home)
 - Exemplo de biblioteca android Cross Feature, usado para que todos tenham o mesmo thema (GitHubApp/libraries/lib-theme).
 - Exemplo de biblioteca Flutter Cross Feature, usada para navegar para o nativo (GitHubApp/libraries/lib_flutter_core)
 - Boas praticas de uso do Git, (Git Flow, Attomic commits, Semmantic commits).
